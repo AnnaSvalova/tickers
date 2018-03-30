@@ -1,0 +1,30 @@
+<html>
+    <head><title>Trades for {{ ticker }}, insider {{ insider }}</title></head>
+    <body>
+        <h3>Trades for {{ ticker }}, insider {{ insider }}</h3>
+        <table align="center" width="50%">
+            <thead>
+                <tr>
+                    <th>Owner Type</th>
+                    <th>Last Date</th>
+                    <th>Transaction Type</th>
+                    <th>Shares Trades</th>
+                    <th>Last Price</th>
+                    <th>Shares Held</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                    <tr>
+                        <td align="center" width="16%">{{ trade.owner_type }}</td>
+                        <td align="center" width="16%">{{ trade.last_date }}</td>
+                        <td align="center" width="16%">{{ trade.transaction_type }}</td>
+                        <td align="center" width="16%">{{ trade.shares_trades }}</td>
+                        <td align="center" width="16%">{{ trade.last_price }}</td>
+                        <td align="center" width="16%">{{ trade.shares_held }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

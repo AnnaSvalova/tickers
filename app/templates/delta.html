@@ -1,0 +1,46 @@
+<html>
+    <head><title>Prices for {{ ticker }}</title></head>
+    <body>
+        {% if not prices %}
+            <h3>Prices for {{ ticker }}</h3>
+            <form action="?">
+                Value:
+                <input type="number" name="value"><br>
+
+                Type:
+                <select name="type">
+                    {% for type in types %}
+                        <option>{{ type }}</option>
+                    {% endfor %}
+                </select>
+                <p><input type="submit" value="Send" ></p>
+            </form>
+        {% else %}
+            <h3>Prices for {{ ticker }}, delta {{ delta }}</h3>
+            <table align="center" width="50%">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Close</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for price in prices %}
+                        <tr>
+                            <td width="16%" align="center">{{ price.date }}</td>
+                            <td width="16%" align="center">{{ price.open }}</td>
+                            <td width="16%" align="center">{{ price.high }}</td>
+                            <td width="16%" align="center">{{ price.low }}</td>
+                            <td width="16%" align="center">{{ price.close }}</td>
+                            <td width="16%" align="center">{{ price.volume }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </body>
+</html>

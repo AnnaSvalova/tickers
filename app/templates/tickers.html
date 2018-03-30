@@ -1,0 +1,9 @@
+<html>
+    <head><title>Tickers</title></head>
+    <body>
+        <h3>Tickers</h3>
+        {% for ticker in tickers %}
+            <a href="/{{ ticker }}">{{ ticker }}</a><br/>
+        {% endfor %}
+    </body>
+</html>

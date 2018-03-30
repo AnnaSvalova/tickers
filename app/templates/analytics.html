@@ -1,0 +1,44 @@
+<html>
+    <head><title>Trades for {{ ticker }} by {{ insider }}</title></head>
+    <body>
+        {% if result %}
+            <h3>Analytics: {{ date_from }} - {{ date_to }}</h3>
+            <table align="center" width="50%">
+                <thead>
+                    <tr>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Close</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="16%">{{ result.open }}</td>
+                        <td width="16%">{{ result.high }}</td>
+                        <td width="16%">{{ result.low }}</td>
+                        <td width="16%">{{ result.close }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <h3>Analytics</h3>
+            <form action="?">
+                Date From:
+                <select name="date_from">
+                    {% for date in dates %}
+                        <option>{{ date }}</option>
+                    {% endfor %}
+                </select>
+
+                Date To:
+                <select name="date_to">
+                    {% for date in dates %}
+                        <option>{{ date }}</option>
+                    {% endfor %}
+                </select>
+                <p><input type="submit" value="Send" ></p>
+            </form>
+        {% endif %}
+    </body>
+</html>

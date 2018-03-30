@@ -1,0 +1,33 @@
+<html>
+    <head><title>Prices</title></head>
+    <body>
+        <h3>{{ ticker }}: Prices for 3 months</h3>
+        <a href="/{{ ticker }}/insider">Insider Trades</a><br/>
+        <a href="/{{ ticker }}/analytics">Analytics</a><br/>
+        <a href="/{{ ticker }}/delta">Delta</a>
+        <table align="center" width="50%">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Open</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Close</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for price in prices %}
+                    <tr>
+                        <td width="16%" align="center">{{ price.date }}</td>
+                        <td width="16%" align="center">{{ price.open }}</td>
+                        <td width="16%" align="center">{{ price.high }}</td>
+                        <td width="16%" align="center">{{ price.low }}</td>
+                        <td width="16%" align="center">{{ price.close }}</td>
+                        <td width="16%" align="center">{{ price.volume }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
