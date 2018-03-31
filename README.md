@@ -47,6 +47,6 @@ python3.6 main.py -d tickers -u user -p pass --tickers-file <path-to-tickers-fil
 - `/` или `/api` - получить список акций
 - `/%TICKER%` или `/api/%TICKER%` - получить таблицу цен за последние 3 месяца на заданную акцию
 - `/%TICKER%/insider` или `/api/%TICKER%/insider` - получить таблицу с данными торговли владельцев компании
-- `/%TICKER%/insider/%NAME%` или `/api/%TICKER%/insider/%NAME%` - получить таблицу с данныит торговли заданного владельца компании
+- `/%TICKER%/insider/%NAME%` или `/api/%TICKER%/insider/%NAME%` - получить таблицу с данными торговли заданного владельца компании
 - `/%TICKER%/analytics?date_from=..&date_to=..` или `/api/%TICKER%/analytics?date_from=..&date_to=..` - данные о ранице цен в заданных датах
 - `/%TICKER/delta?value=N&type=(open/high/low/close)` или `/api/%TICKER/delta?value=N&type=(open/high/low/close)` - информация о минимальном периоде, когда указанная цена менялась на заданное значение
